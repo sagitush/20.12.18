@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace _12._12._18
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void random_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine("random number");
+            int a = Convert.ToInt32(downlimit.Text);
+
+            Debug.WriteLine($"The down limit is:{a} ");
+
+
+            int b = Convert.ToInt32(uplimit.Text);
+
+            Debug.WriteLine($"The up limit is:{b} ");
+
+
+            Random randomgenerator = new Random();
+            
+            int c = randomgenerator.Next(a, b+1);
+            Debug.WriteLine($"The random number is:{c} ");
+            
+
+
+
+            randomlbl.Text = $"The new number random is: {c}";
+        }
+
+        private void zerofy_Click(object sender, EventArgs e)
+        {
+            downlimit.Text = "0";
+            uplimit.Text = "0";
+
+
+
+
+        }
+    }
+}
